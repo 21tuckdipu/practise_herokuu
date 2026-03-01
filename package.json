@@ -1,0 +1,22 @@
+{
+  "name": "intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "allure": "allure serve allure-results",
+    "clean": "rimraf allure-results",
+    "report": "allure serve allure-results",
+    "report:generate": "allure generate allure-results --clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3",
+    "allure-playwright": "^3.4.5",
+    "rimraf": "^6.1.3"
+  }
+}
