@@ -1,0 +1,1 @@
+export const BASE_HEROKUAPP = "https://the-internet.herokuapp.com"

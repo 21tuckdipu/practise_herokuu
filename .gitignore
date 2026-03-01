@@ -8,6 +8,6 @@ node_modules/
 /playwright/.auth/
 allure-report/
 allure-results/
-config-data.ts 
 *.png
 *.txt
+.env

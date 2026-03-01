@@ -1,7 +1,12 @@
-//http://c145ced0-c4d9-46cf-8cfe-a9459b357ffc.numanyrx.certifyleads.in/login
-import { test, expect, chromium, ChromiumBrowser, BrowserContext } from "@playwright/test";
 
-const BASE_URL = "https://appdev02.maricoapps.biz/ASPMBLCore"
+import { test, expect, chromium, ChromiumBrowser, BrowserContext } from "@playwright/test";
+import dotenv from "dotenv";
+dotenv.config();
+
+const BASE_URL = process.env.BASE_URL??"";
+const username = process.env.USERID??"";
+const password = process.env.PASSWORD??"";
+
 let open_chrome: ChromiumBrowser;
 let context_01: BrowserContext;
 let context_02: BrowserContext;
@@ -19,8 +24,8 @@ test("OPen Browser", async () => {
     // page_01.on('request', request => console.log(request.url()));
     await page_01.goto(`${BASE_URL}/login`);
     await page_01.getByRole("button", { name: "Non Marico Login" }).click()
-    await page_01.getByPlaceholder("Username").fill("22026");
-    await page_01.getByPlaceholder("Password").fill("123");
+    await page_01.getByPlaceholder("Username").fill(username);
+    await page_01.getByPlaceholder("Password").fill(password);
 
     // page_01.on("response", response => console.log(response.status() + response.url()));
     await page_01.route("**/JWTAuth/GetToken", async (route) => {
