@@ -5,7 +5,7 @@ import path from "path";
 
 const __dirname = path.dirname(__filename);
 
-test.skip("File-Operations", async ({ page }) => {
+test("File-Operations", async ({ page }) => {
 
     await page.goto(BASE_HEROKUAPP + "/upload");
     const uploadFilePath = path.resolve("upload-file/averageCount.txt");

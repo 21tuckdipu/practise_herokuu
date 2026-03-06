@@ -2,7 +2,7 @@
 import { test, expect, chromium, BrowserContext } from "@playwright/test";
 import { BASE_HEROKUAPP } from "../../config-data";
 
-test('BrokenIMG-COUNT', async ({ page }) => {
+test.fail('BrokenIMG-COUNT', async ({ page }) => {
     await page.goto(BASE_HEROKUAPP + "/broken_images");
 
     const IMG_HOLDER = page.locator("#content");

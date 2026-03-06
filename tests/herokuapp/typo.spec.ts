@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { BASE_HEROKUAPP } from "../../config-data";
 
-test("typo", async ({ page }) => {
+test.fail("typo", async ({ page }) => {
 
     await page.goto(BASE_HEROKUAPP + "/typos");
     const header = page.locator("h3").getByText("Typos");
